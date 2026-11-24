@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#263a32" />
+        <title>Ogui Road Rush</title>
+    </head>
+    <body>
+        <canvas id="application-canvas"></canvas>
+        <div class="hud">
+            <header class="topbar">
+                <div class="brand"><span class="brand-mark">042</span><div><strong>OGUI ROAD RUSH</strong><small>ENUGU · COAL CITY</small></div></div>
+                <div class="stat"><small>DISTANCE</small><strong id="distance">0000 m</strong></div>
+                <div class="stat score-stat"><small>K COINS</small><strong id="score">0</strong></div>
+                <div class="stat"><small>NEAR MISSES</small><strong id="near-misses">0</strong></div>
+                <button id="settings-open" class="settings-button" aria-label="Settings">⚙</button>
+            </header>
+            <div class="location-tag"><span class="live-dot"></span> <span id="location-label">OGUI ROAD, ENUGU</span></div>
+            <div class="bottom-hint">← → MOVE <span>·</span> ↑ JUMP <span>·</span> ↓ DUCK <span>·</span> SHIFT DASH</div>
+            <section id="lobby-panel" class="lobby-modal">
+                <div class="eyebrow">THE COAL CITY RUN · ENUGU STATE</div>
+                <div class="lobby-title-row"><div><h1>Pick your<br /><em>route.</em></h1></div><span class="area-count">03 AREAS</span></div>
+                <div id="area-list" class="area-list">
+                    <button class="area-card" data-area="Ogui"><span class="area-number">01</span><span class="area-card-copy"><strong>Ogui</strong><small>BUSY CITY STREETS</small></span><span class="area-fee">FREE<small>ENTRY</small></span><span class="card-arrow">↗</span></button>
+                    <button class="area-card" data-area="GRA"><span class="area-number">02</span><span class="area-card-copy"><strong>GRA</strong><small>TREE-LINED BOULEVARDS</small></span><span class="area-fee">FREE<small>ENTRY</small></span><span class="card-arrow">↗</span></button>
+                    <button class="area-card" data-area="Independence Layout"><span class="area-number">03</span><span class="area-card-copy"><strong>Independence Layout</strong><small>WIDE CITY AVENUES</small></span><span class="area-fee">FREE<small>ENTRY</small></span><span class="card-arrow">↗</span></button>
+                </div>
+                <div class="active-runs"><div class="section-label">ACTIVE RUNS <span id="active-count">0</span></div><div id="active-runs-list" class="active-runs-list"><p class="empty-runs">Your started routes will appear here.</p></div></div>
+                <div class="modal-foot">CHOOSE AN AREA TO START A RUN</div>
+            </section>
+            <section id="start-panel" class="modal hidden">
+                <div class="eyebrow" id="run-eyebrow">THE COAL CITY RUN</div>
+                <h1>Make your<br /><em>connection.</em></h1>
+                <p>Dash down Ogui Road, dodge the traffic and street-side surprises, and see how far you can get.</p>
+                <button id="start-button" class="primary-button">START RUN <span>→</span></button>
+                <div class="modal-foot">WASD / ARROW KEYS <i>•</i> SWIPE TO MOVE</div>
+            </section>
+            <section id="settings-panel" class="modal hidden">
+                <div class="eyebrow">PREFERENCES</div><h1>Sound &<br /><em>ambience.</em></h1>
+                <label class="sound-toggle"><span><strong>Ambient music</strong><small>Calm African-inspired instrumental</small></span><input id="music-toggle" type="checkbox" checked /></label>
+                <label class="volume-control">MUSIC VOLUME <input id="music-volume" type="range" min="0" max="100" value="28" /></label>
+                <label class="sound-toggle"><span><strong>Interface sounds</strong><small>Separate sounds for cards and buttons</small></span><input id="sfx-toggle" type="checkbox" checked /></label>
+                <button id="settings-close" class="primary-button">DONE <span>✓</span></button>
+            </section>
+            <section id="game-over-panel" class="modal hidden">
+                <div class="eyebrow">RUN ENDED</div>
+                <h1>Traffic<br /><em>caught up.</em></h1>
+                <p>You made it <strong id="final-score">0 m</strong> along Ogui Road.</p>
+                <button id="restart-button" class="primary-button">RUN IT BACK <span>↻</span></button>
+                <button id="lobby-button" class="secondary-button">← BACK TO LOBBY</button>
+            </section>
+        </div>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>

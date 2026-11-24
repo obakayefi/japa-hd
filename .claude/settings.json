@@ -1,0 +1,5 @@
+{
+  "enabledPlugins": {
+    "playcanvas@anthropic-plugin-directory": true
+  }
+}
